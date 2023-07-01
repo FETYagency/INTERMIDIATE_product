@@ -92,11 +92,9 @@ const nav = document.querySelector(".mobNav")
 btn.addEventListener("click", ()=>{
     if(nav.dataset.state==="close"){
         nav.dataset.state="open"
-        btn.style.background="url(../images/icon-close.svg) no-repeat center"
         btn.style.insetBlock="50% auto"
     }else{
         nav.dataset.state="close"
-        btn.style.background="url(../images/icon-hamburger.svg) no-repeat center"
         btn.style.insetBlock="auto -5%"
     }
 })
