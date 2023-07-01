@@ -1,0 +1,365 @@
+@import url(reset.css);
+@import url(vars.css);
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+:root{
+    --FF: 'League Spartan', sans-serif;
+    --WGHT_BOLD:700;
+    --WGHT_MED:600;
+
+    font-size: 16px;
+}
+
+header{
+    inline-size: min(1440px, 100%);
+    
+
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    
+    position: absolute;
+    inset-inline: 50% auto;
+    transform: translateX(-50%);
+
+    padding-inline: 4rem 0;
+    padding-block: 4rem 0;
+}
+.desktopNav{
+    display: flex;
+    gap: 2rem;
+}
+nav>a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: var(--WGHT_MED);
+    line-height: normal;
+    letter-spacing: -0.667px;
+
+    position: relative;
+}
+
+nav>a::after{
+    content: "";
+
+    position: absolute;
+    inset-inline: 50% auto;
+    transform: translateX(-50%);
+    inset-block: 120%;
+
+    inline-size: 0%;
+    height: 2px;
+    background-color: #FFF;
+
+    transition: all .2s ease;
+}
+nav>a:hover::after{
+    inline-size: 50%;
+}
+
+a{
+    display: inline-block;
+}
+body{
+    font-family: var(--FF);
+}
+
+.wrapper{
+    inline-size: min(1440px, 100%);
+    margin-inline: auto;
+}
+
+.product_container{
+    display: flex;
+    block-size: 534px;
+}
+.gallery{
+    overflow: hidden;
+    flex: 0 1 840px;
+
+    display: flex;
+}
+.product_img{
+    flex: 0 0 100%;
+}
+.product_img>img{
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 0% 0%;
+}
+
+.product_description{
+    flex: 1 1 auto;
+    padding: 1rem;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+}
+
+.arrows{
+    position: absolute;
+    inset-block: auto 0;
+    inset-inline: 0 auto;
+
+    background-color: #000;
+
+    display: flex;
+
+    inline-size: 160px;
+    block-size: 80px;
+}
+.arrows>*{
+    flex: 1 1 auto;
+    cursor: pointer;
+}
+.arrows>*:hover{
+    background-color: #444444;
+}
+.left{
+    background: url(../images/icon-angle-left.svg) no-repeat center;
+}
+.right{
+    background: url(../images/icon-angle-right.svg) no-repeat center;
+}
+.product_description>article{
+    max-width: 400px;
+    color: #000;
+}
+.product_description>article>*{
+    margin-block-start: 1.375rem;
+}
+.productName{
+    margin-block-start: 0rem;
+
+
+    font-size: 3rem;
+    line-height: normal;
+    
+    font-weight: var(--WGHT_MED);
+    letter-spacing: -2px;
+    
+    opacity: 1;
+
+    transition: all .4s ease;
+}
+.productDesc{
+    color: #A0A0A0;
+    
+    font-size: 1rem;
+    line-height: 1.375rem;
+    
+    letter-spacing: -0.333px;
+    opacity: 1;
+    transition: all .3s ease;
+}
+.productName.changing,.productDesc.changing{
+    opacity: 0;
+    transition: all .3s ease;
+}
+.shopNOw{
+    color: inherit;
+    font-size: .99rem;
+    line-height: 1rem;
+
+    letter-spacing: 12.5px;
+
+    text-decoration: none;
+
+    position: relative;
+
+}
+.shopNOw::after{
+    content: url(../images/icon-arrow.svg);
+    position: absolute;
+    inset-inline: calc(100% + 1.85rem) auto;
+    inset-block:  50% auto;
+    transform: translateY(-50%);
+
+    transition: all .2s ease;
+}
+.shopNOw:hover::after{
+    inset-inline: calc(100% + 2.4rem) auto;
+}
+
+.aboutUs{
+    display: flex;
+}
+.aboutUs img{
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+.content{
+    flex: 1 1 auto;
+
+    display: grid;
+    place-items: center;
+}
+.content>article{
+    max-inline-size: 484px;
+
+    padding: 1rem;
+}
+.aboutHeader{
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.375rem;
+
+    font-weight: var(--WGHT_BOLD);
+
+    letter-spacing: 6.667px;
+}
+.aboutPara{
+    color: #A0A0A0;
+    font-size: 1rem;
+    line-height: 1.375rem;
+
+    font-weight: var(--WGHT_MED);
+
+    letter-spacing: -0.333px;
+
+    margin-block-start: 1rem;
+}
+
+
+.navBtn{
+    display: none;
+}
+.mobNav{
+    display: none;
+}
+
+@media (width<1161px){
+    .product_description{
+        place-items: start;
+    }
+}
+@media(width<975px){
+    .wrapper{
+        inline-size: min(375px, 100%);
+    }
+    .product_container{
+        flex-flow: column nowrap;
+        block-size: auto;
+    }
+    .gallery{
+        flex: 0 0 auto;
+        block-size: 360px;
+    }
+
+    .productName{
+        font-size: 40px;
+        letter-spacing: -1.667px;
+    }
+
+    .arrows{
+        position: absolute;
+        inset-block: auto 100%;
+        inset-inline: auto 0;
+    
+        background-color: #000;
+    
+        display: flex;
+    
+        inline-size: 112px;
+        block-size: 56px;
+    }
+    .arrows>*{
+        background-size: 8px 16px;
+    }
+
+    .aboutUs{
+        flex-direction: column;
+    }
+
+    .aboutUs img{
+        inline-size: 100%;
+        block-size: 238px;
+        object-fit: cover;
+
+        object-position: 0% 0%;
+    }
+    .content>article{
+        max-inline-size: 484px;
+    
+        padding: 1rem;
+        padding-block: 3rem;
+    }
+    .aboutHeader{
+        color: #000;
+        font-size: 1rem;
+        line-height: 1.375rem;
+    
+        font-weight: var(--WGHT_BOLD);
+    
+        letter-spacing: 6.667px;
+    }
+    .aboutPara{
+        color: #A0A0A0;
+        font-size: 1rem;
+        line-height: 1.375rem;
+    
+        font-weight: var(--WGHT_MED);
+    
+        letter-spacing: -0.333px;
+    
+        margin-block-start: 1rem;
+    }
+
+    header{
+        justify-content: center;
+        padding-inline: 3rem;
+
+        inline-size: min(375px, 100%);
+    }
+    .desktopNav{
+        display: none;
+    }
+    .navBtn{
+        background: url(../images/icon-hamburger.svg) no-repeat center ;
+        inline-size: 20px;
+        block-size: 14px;
+
+        cursor: pointer;
+        position: absolute;
+        inset-inline: 1.5rem auto;
+
+        inset-block: auto -5%;
+        transform: translateY(-50%);
+        z-index: 99;
+
+        display: block;
+    }
+    .mobNav{
+        background-color: #FFF;
+        color: #000;
+        position: absolute;
+        inset-inline: 0;
+        inset-block: auto 100%;
+        
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 1.5rem;
+        padding-inline: 1rem;
+
+        transition: all .2s ease;
+    }
+    .mobNav[data-state="close"]{
+        inset-block: -30px 100%;
+    }
+    .mobNav[data-state="open"]{
+        inset-block: 0;
+    }
+    .mobNav>a{
+        color: inherit;
+    }
+    .mobNav>a:hover::after{
+        background-color: #000;
+    }
+    
+}
